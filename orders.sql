@@ -26,3 +26,19 @@ GROUP BY
     customers.id,
     customers.name
 ORDER BY total_orders DESC;
+
+-- SELECT SUM(books.price * orders.quantity) AS total_revenue
+SELECT SUM(books.price * orders.quantity) as total_revenue
+FROM orders
+    JOIN books ON orders.book_id = books.id;
+
+SELECT customers.name, count(orders.id) as orders_count
+from customers
+    JOIN orders ON customers.id = orders.customer_id
+GROUP BY
+    customers.id
+HAVING
+    count(orders.id) > 1;
+
+
+ 

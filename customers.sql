@@ -22,3 +22,13 @@ VALUES (
         'charlie@email.com',
         '2023-06-20'
     );
+SELECT * FROM customers;
+
+8.
+DELETE FROM customers
+WHERE
+    id NOT IN (
+        SELECT DISTINCT
+            customer_id
+        FROM orders
+    )

@@ -32,7 +32,15 @@ VALUES (
 
 SELECT * FROM books
 
+1.
 SELECT title FROM books WHERE stock = 0
 
+2.
 SELECT * FROM books ORDER BY price DESC LIMIT 1
 
+SELECT ROUND(AVG(price),2) as avg_book_price FROM books
+
+7.
+UPDATE books 
+SET price = price + (price * 0.10) 
+WHERE published_year >= 2000;
