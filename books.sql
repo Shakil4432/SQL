@@ -32,15 +32,19 @@ VALUES (
 
 SELECT * FROM books
 
-1.
+-- 1.Find books that are out of stock.
+
 SELECT title FROM books WHERE stock = 0
 
-2.
+-- 2.Retrieve the most expensive book in the store.
 SELECT * FROM books ORDER BY price DESC LIMIT 1
 
-SELECT ROUND(AVG(price),2) as avg_book_price FROM books
+-- 6.Find the average price of books in the store
+SELECT ROUND(AVG(price), 2) as avg_book_price FROM books
 
-7.
-UPDATE books 
-SET price = price + (price * 0.10) 
-WHERE published_year >= 2000;
+-- 7.Increase the price of all books published before 2000 by 10%.
+UPDATE books
+SET
+    price = price + (price * 0.10)
+WHERE
+    published_year >= 2000;

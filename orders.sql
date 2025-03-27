@@ -19,6 +19,7 @@ VALUES (1, 2, 1, '2024-03-10'),
 
 SELECT * FROM orders
 
+-- 3.Find the total number of orders placed by each customer.
 SELECT customers.id, customers.name, COUNT(orders.id) AS total_orders
 FROM customers
     LEFT JOIN orders ON customers.id = orders.customer_id
@@ -27,11 +28,12 @@ GROUP BY
     customers.name
 ORDER BY total_orders DESC;
 
--- SELECT SUM(books.price * orders.quantity) AS total_revenue
+-- 4.Calculate the total revenue generated from book sales.
 SELECT SUM(books.price * orders.quantity) as total_revenue
 FROM orders
     JOIN books ON orders.book_id = books.id;
-
+    
+-- 5.List all customers who have placed more than one order.
 SELECT customers.name, count(orders.id) as orders_count
 from customers
     JOIN orders ON customers.id = orders.customer_id

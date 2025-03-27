@@ -24,7 +24,7 @@ VALUES (
     );
 SELECT * FROM customers;
 
-8.
+-- 8.Delete customers who haven't placed any orders.
 DELETE FROM customers
 WHERE
     id NOT IN (
