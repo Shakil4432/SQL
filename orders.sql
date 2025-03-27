@@ -16,3 +16,13 @@ INSERT INTO
 VALUES (1, 2, 1, '2024-03-10'),
     (2, 1, 1, '2024-02-20'),
     (1, 3, 2, '2024-03-05');
+
+SELECT * FROM orders
+
+SELECT customers.id, customers.name, COUNT(orders.id) AS total_orders
+FROM customers
+    LEFT JOIN orders ON customers.id = orders.customer_id
+GROUP BY
+    customers.id,
+    customers.name
+ORDER BY total_orders DESC;

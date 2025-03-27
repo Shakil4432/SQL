@@ -29,3 +29,10 @@ VALUES (
         0,
         2018
     );
+
+SELECT * FROM books
+
+SELECT title FROM books WHERE stock = 0
+
+SELECT * FROM books ORDER BY price DESC LIMIT 1
+
